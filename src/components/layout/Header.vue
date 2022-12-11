@@ -5,7 +5,7 @@
         <a href="">
           <img
             class="header__search"
-            src="../../assets/header/icon-search.svg"
+            src="../../../public/header/icon-search.svg"
           />
         </a>
       </div>
@@ -18,13 +18,13 @@
         <a href="">
           <img
             class="header__cart"
-            src="../../assets/header/icon-cart.svg"
+            src="../../../public/header/icon-cart.svg"
           />
         </a>
         <a href="">
           <img
             class="header__profile"
-            src="../../assets/header/icon-profile.svg"
+            src="../../../public/header/icon-profile.svg"
           />
         </a>
       </div>
