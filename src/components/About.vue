@@ -48,13 +48,15 @@ const aboutItems = [
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/variables.scss';
+
 .about {
   &__title {
-    font-family: 'Clash Display', sans-serif;
+    font-family: $clash-display;
     font-weight: 400;
     font-size: 24px;
     line-height: 140%;
-    color: #2a254b;
+    color: $primary-dark;
     text-align: center;
     margin: 80px 0 0 0;
   }
@@ -62,7 +64,7 @@ const aboutItems = [
   &__items {
     display: flex;
     column-gap: 20px;
-    margin: 35px 40px 80px;
+    margin: 35px 80px 80px;
   }
 
   &__item {
@@ -83,13 +85,13 @@ const aboutItems = [
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
-    color: #2a254b;
+    color: $primary-dark;
   }
 
   &__description {
     font-size: 16px;
     line-height: 150%;
-    color: #2a254b;
+    color: $primary-dark;
   }
 }
 </style>

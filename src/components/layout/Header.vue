@@ -5,38 +5,40 @@
         <a href="">
           <img
             class="header__search"
-            src="../../../public/header/icon-search.svg"
+            src="/header/icon-search.svg"
           />
         </a>
       </div>
-      <a
-        href="#"
+      <router-link
+        to="/"
         class="header__title"
-        >Avion</a
+        >Avion</router-link
       >
       <div class="header__menu--right">
-        <a href="">
+        <router-link to="/cart">
           <img
             class="header__cart"
-            src="../../../public/header/icon-cart.svg"
+            src="/header/icon-cart.svg"
+            alt="Cart"
           />
-        </a>
-        <a href="">
+        </router-link>
+        <router-link to="/profile">
           <img
             class="header__profile"
-            src="../../../public/header/icon-profile.svg"
+            src="/header/icon-profile.svg"
+            alt="Profile"
           />
-        </a>
+        </router-link>
       </div>
     </div>
     <div class="header__bottom">
       <div class="header__items">
-        <a
+        <router-link
+          :to="item.path"
           class="header__item"
           v-for="(item, index) of headerItems"
           :key="index"
-          :href="item.path"
-          >{{ item.name }}</a
+          >{{ item.name }}</router-link
         >
       </div>
     </div>
@@ -77,7 +79,7 @@ const headerItems = [
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.cdnfonts.com/css/clash-display');
+@import '@/assets/styles/variables.scss';
 
 .header {
   background-color: #fff;
@@ -98,10 +100,10 @@ const headerItems = [
   }
 
   &__title {
-    font-family: 'Clash Display', sans-serif;
+    font-family: $clash-display;
     font-size: 24px;
     line-height: 30px;
-    color: #22202e;
+    color: $secondary-dark;
     text-decoration: none;
   }
 
