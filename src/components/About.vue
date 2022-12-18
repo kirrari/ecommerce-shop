@@ -73,7 +73,7 @@ const aboutItems = [
     display: flex;
     flex-direction: column;
     row-gap: 12px;
-    max-width: 25%;
+    flex: 0 1 25%;
   }
 
   &__icon {
