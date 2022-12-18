@@ -8,6 +8,12 @@
       link="View collection"
       title-color="#22202E"
       button-color="secondary"
+      background-color="#fff"
+    />
+    <img
+      class="hero__img"
+      src="/hero/hero-mobile.jpg"
+      alt=""
     />
   </div>
 </template>
@@ -22,17 +28,31 @@ import InfoBlock from '@/components/InfoBlock.vue';
   background-size: cover;
   max-height: 704px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   &__info {
     box-sizing: border-box;
-    background: #fff;
-    width: 630px;
-    height: 444px;
-    padding: 48px 61px 46px 56px;
+    max-width: 630px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     margin: 130px 80px 130px auto;
+    @media (max-width: 1024px) {
+      margin: 60px 40px;
+    }
+    @media (max-width: 480px) {
+      margin: 0;
+      padding: 30px 20px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    @media (min-width: 481px) {
+      display: none;
+    }
   }
 }
 </style>

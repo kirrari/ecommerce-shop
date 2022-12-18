@@ -52,6 +52,7 @@ const aboutItems = [
 
 .about {
   &__title {
+    display: block;
     font-family: $clash-display;
     font-weight: 400;
     font-size: 24px;
@@ -59,12 +60,29 @@ const aboutItems = [
     color: $primary-dark;
     text-align: center;
     margin: 80px 0 0 0;
+    @media (max-width: 1024px) {
+      margin: 50px 20px;
+    }
+    @media (max-width: 1024px) {
+      margin: 50px 20px 35px;
+    }
   }
 
   &__items {
-    display: flex;
-    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     margin: 35px 80px 80px;
+    @media (max-width: 1145px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 1024px) {
+      margin: 35px 40px 30px;
+    }
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      margin: 35px 20px 40px;
+    }
   }
 
   &__item {
@@ -73,7 +91,9 @@ const aboutItems = [
     display: flex;
     flex-direction: column;
     row-gap: 12px;
-    flex: 0 1 25%;
+    @media (max-width: 767px) {
+      padding: 24px;
+    }
   }
 
   &__icon {

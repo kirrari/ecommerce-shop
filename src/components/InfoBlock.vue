@@ -76,12 +76,27 @@ const props = defineProps({
     line-height: 140%;
     color: $secondary-dark;
     margin: 0 0 20px 0;
+    @media (max-width: 767px) {
+      font-size: 24px;
+      margin: 0 0 10px 0;
+    }
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
 
   &__description {
     font-size: 18px;
     line-height: 150%;
     color: #5b5676;
+    margin: 0 0 20px 0;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      margin: 0 0 30px 0;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
   }
 
   &__link {
@@ -91,6 +106,10 @@ const props = defineProps({
     text-decoration: none;
     align-self: baseline;
     margin-top: auto;
+    @media (max-width: 480px) {
+      font-size: 16px;
+      width: 100%;
+    }
   }
 }
 </style>

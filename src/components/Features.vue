@@ -24,20 +24,29 @@ import InfoBlock from '@/components/InfoBlock.vue';
 
 <style lang="scss" scoped>
 .features {
-  display: flex;
-  column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
   margin: 60px 80px;
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    margin: 30px 40px;
+  }
+  @media (max-width: 480px) {
+    margin: 30px 20px;
+  }
 
   &__info {
     box-sizing: border-box;
-    width: 634px;
-    height: 478px;
     padding: 65px 75px 55px 65px;
+    @media (max-width: 480px) {
+      padding: 30px;
+    }
   }
 
   &__img {
-    width: 634px;
-    height: 478px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

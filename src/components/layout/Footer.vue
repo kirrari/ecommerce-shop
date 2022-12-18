@@ -90,46 +90,46 @@
         </div>
         <div class="footer__subscribe">
           <span class="footer__title--subscribe">Join our mailing list</span>
-          <div class="footer__form">
-            <input
-              class="footer__input"
-              placeholder="your@email.com"
-            />
-            <Button
-              class="footer__btn"
-              color="secondary"
-              >Sign up</Button
-            >
-          </div>
+          <SubscribeForm
+            class="footer__form"
+            button-color="secondary"
+            input-color="#fff"
+          />
         </div>
       </div>
       <div class="footer__bottom">
         <span class="footer__copyright">Copyright 2022 Avion LTD</span>
         <div class="footer__icons">
-          <img
-            src=""
+          <a
+            href="#"
             class="footer__icon"
-          />
-          <img
-            src=""
+            ><img src="footer/icon-linkedin.svg"
+          /></a>
+          <a
+            href="#"
             class="footer__icon"
-          />
-          <img
-            src=""
+            ><img src="footer/icon-facebook.svg"
+          /></a>
+          <a
+            href="#"
             class="footer__icon"
-          />
-          <img
-            src=""
+            ><img src="footer/icon-instagram.svg"
+          /></a>
+          <a
+            href="#"
             class="footer__icon"
-          />
-          <img
-            src=""
+            ><img src="footer/icon-skype.svg"
+          /></a>
+          <a
+            href="#"
             class="footer__icon"
-          />
-          <img
-            src=""
+            ><img src="footer/icon-twitter.svg"
+          /></a>
+          <a
+            href="#"
             class="footer__icon"
-          />
+            ><img src="footer/icon-pinterest.svg"
+          /></a>
         </div>
       </div>
     </div>
@@ -137,7 +137,7 @@
 </template>
 
 <script setup>
-import Button from '@/components/UI/Button.vue';
+import SubscribeForm from '@/components/SubscribeForm.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -149,18 +149,39 @@ import Button from '@/components/UI/Button.vue';
 
   &__container {
     padding: 60px 80px 0;
+    @media (max-width: 1024px) {
+      padding: 30px 40px 0;
+    }
+    @media (max-width: 480px) {
+      padding: 30px 20px 0;
+    }
   }
 
   &__top {
     display: flex;
     padding: 0 0 50px 0;
     border-bottom: 1px solid #4e4d93;
+    column-gap: 60px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
 
   &__content {
     display: flex;
-    flex: 0 1 50%;
-    column-gap: 120px;
+    flex: 1 0 440px;
+    gap: 80px;
+
+    @media (max-width: 1024px) {
+      flex: 1 0 100%;
+      margin: 0 0 50px 0;
+    }
+    @media (max-width: 480px) {
+      flex-wrap: wrap;
+      gap: 40px 100px;
+      margin: 0 0 40px 0;
+    }
   }
 
   &__links {
@@ -176,7 +197,10 @@ import Button from '@/components/UI/Button.vue';
     color: #fff;
     font-size: 14px;
     line-height: 20px;
-    font-weight: 300;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__subscribe {
@@ -188,24 +212,6 @@ import Button from '@/components/UI/Button.vue';
     margin: 0 0 15px 0;
   }
 
-  &__form {
-    display: flex;
-  }
-
-  &__input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-  }
-
-  &__input::placeholder {
-    font-size: 16px;
-    line-height: 22px;
-    color: #ffffff84;
-    padding: 30px;
-    font-weight: 300;
-  }
-
   &__btn {
     width: 140px;
   }
@@ -213,6 +219,12 @@ import Button from '@/components/UI/Button.vue';
   &__bottom {
     display: flex;
     padding: 20px 0;
+    justify-content: space-between;
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+    }
   }
 
   &__copyright {
@@ -221,9 +233,15 @@ import Button from '@/components/UI/Button.vue';
   }
 
   &__icons {
+    display: flex;
+    column-gap: 24px;
   }
 
   &__icon {
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 </style>

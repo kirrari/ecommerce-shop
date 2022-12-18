@@ -83,8 +83,11 @@ const headerItems = [
 
 .header {
   background-color: #fff;
-  height: 132px;
   margin: 0 30px;
+
+  @media (max-width: 480px) {
+    margin: 0 20px;
+  }
 
   &__top {
     height: 70px;
@@ -92,11 +95,19 @@ const headerItems = [
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @media (max-width: 767px) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
   }
 
   &__search {
     width: 20px;
     height: 20px;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   &__title {
@@ -114,22 +125,48 @@ const headerItems = [
     flex: 0 1 50%;
   }
 
+  &__menu--left {
+    @media (max-width: 767px) {
+      justify-content: flex-end;
+    }
+  }
+
   &__menu--right {
     justify-content: flex-end;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__cart {
     width: 20px;
     height: 20px;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__profile {
     width: 20px;
     height: 20px;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__bottom {
     height: 62px;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__items {
@@ -145,6 +182,10 @@ const headerItems = [
     line-height: 22px;
     color: #726e8d;
     text-decoration: none;
+    transition: all 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 </style>

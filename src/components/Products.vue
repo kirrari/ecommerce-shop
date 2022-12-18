@@ -61,10 +61,17 @@ const products = ref([
   flex-direction: column;
 
   &__container {
-    box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     margin: 30px 80px 50px;
-    column-gap: 20px;
+    gap: 40px 20px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 30px 40px 50px;
+    }
+    @media (max-width: 480px) {
+      margin: 30px 20px;
+    }
   }
 
   &__link {
@@ -73,6 +80,13 @@ const products = ref([
     align-self: baseline;
     margin: 0 auto 40px;
     text-align: center;
+    @media (max-width: 1024px) {
+      margin: 0 auto 30px;
+    }
+    @media (max-width: 480px) {
+      width: calc(100% - 40px);
+      margin: 0 20px 30px;
+    }
   }
 }
 </style>

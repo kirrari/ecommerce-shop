@@ -7,28 +7,18 @@
           Sign up for our newsletter and receive exclusive offers on new ranges,
           sales, pop up stores and more
         </p>
-        <form class="sign-up__form">
-          <input
-            type="text"
-            class="sign-up__input"
-            placeholder="your@email.com"
-          />
-          <Button
-            path="/"
-            class="sign-up__btn"
-            color="primary-dark"
-            >Sign up</Button
-          >
-        </form>
+        <SubscribeForm
+          class="sign-up__form"
+          input-background="#f9f9f9"
+          button-color="primary-dark"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import Button from '@/components/UI/Button.vue';
-
-console.log(Button);
+import SubscribeForm from '@/components/SubscribeForm.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -45,6 +35,14 @@ console.log(Button);
     width: 100%;
     background: #fff;
     margin: 60px 80px;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      margin: 30px 40px;
+    }
+    @media (max-width: 480px) {
+      margin: 0;
+    }
   }
 
   &__content {
@@ -52,7 +50,10 @@ console.log(Button);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 60px auto;
+    margin: 60px 30px;
+    @media (max-width: 480px) {
+      margin: 40px 20px 60px;
+    }
   }
 
   &__title {
@@ -63,6 +64,9 @@ console.log(Button);
     text-align: center;
     color: $primary-dark;
     margin: 0 0 15px 0;
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
   }
 
   &__description {
@@ -72,6 +76,10 @@ console.log(Button);
     text-align: center;
     color: $primary-dark;
     margin: 0 0 70px 0;
+    @media (max-width: 480px) {
+      font-size: 14px;
+      margin: 0 0 35px 0;
+    }
   }
 
   &__form {
@@ -80,23 +88,9 @@ console.log(Button);
     max-height: 50px;
     padding: 0 50px;
     box-sizing: border-box;
-  }
-
-  &__input {
-    background: #f9f9f9;
-    border: none;
-    width: 100%;
-    &::placeholder {
-      color: #d9d9d9;
-      padding: 0 30px;
-      font-size: 16px;
-      line-height: 22px;
-      font-family: $satoshi;
+    @media (max-width: 480px) {
+      padding: 0;
     }
-  }
-
-  &__btn {
-    width: 140px;
   }
 }
 </style>

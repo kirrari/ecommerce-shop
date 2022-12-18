@@ -40,9 +40,10 @@ const props = defineProps({
 @import '@/assets/styles/variables.scss';
 
 .product {
+  display: flex;
+  flex-direction: column;
+
   &__img {
-    max-width: 305px;
-    max-height: 375px;
     margin: 0 0 25px 0;
   }
 
